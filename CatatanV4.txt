@@ -1,0 +1,4 @@
+TAPROJECTV4:
+1. menambahkan view keluhan dengan data user
+2. menambahkan fitur daftar konfirmasi chat pada admin sehingga memudahkan untuk melakukan pembuatan grup chat dari admin
+3. routing disetiap page perlu diberi pengecekkan.

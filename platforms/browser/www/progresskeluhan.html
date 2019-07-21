@@ -1,0 +1,85 @@
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed toolbar-fixed">
+      <div class="page" data-name="tulisprogres"> 
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left"><a href="/berandabackend/" class="link icon-only"><i class="icon f7-icons">chevron_left</i></a></div>
+              <div class="right"><a href="#" class="link icon-only"><i class="icon f7-icons">bell</i></a></div>             
+            </div>
+        </div>
+        
+        <div class="page-content"> 
+          <form id="progresskeluhan" class="progresskeluhan" method="POST" action="">
+            <div class="block">
+
+              <div class="card card-outline">
+                  <div id="datakeluhan"></div>
+
+
+                    
+                </div>
+              
+              <div class="list no-hairlines-md">
+                <div id="username"></div>
+                <div id="status_identitas"></div>
+
+                
+
+                <ul>
+                  <h3>Progress Konsultasi</h3>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Kesimpulan Konsultasi</div>
+                      <div class="item-input-wrap">
+                        <textarea name="isi_konsultasi" id="isi_konsultasi"></textarea>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Kondisi Klien</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="kondisiklien">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                    <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Tempat Konsultasi</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="tempatkonsul">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Status Konsultasi</div>
+                      <div class="item-input-wrap">
+                        <select name="statuskonsul">
+                          <option value="belumselesai">Belum Selesai</option>
+                          <option value="selesai">Selesai</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+             
+              <p class="row">                
+                <input type="button" name="btnkrmprogress" id="btnkrmprogress" value="Simpan Progress" class="col button button-fill color-green">
+                <a href="/keluhan/" class="col button button-raised button-fill color-red" id="btnbtlkeluhan">Batal</a>
+              </p>
+            </div>      
+          </form>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>

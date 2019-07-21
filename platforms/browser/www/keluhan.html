@@ -1,0 +1,161 @@
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed toolbar-fixed">
+      <div class="page" data-name="beranda"> 
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left"><a href="/beranda/" class="link icon-only"><i class="icon f7-icons">chevron_left</i></a></div>
+              <div class="right"><a href="#" class="link icon-only"><i class="icon f7-icons">bell</i></a></div>             
+            </div>
+        </div>
+        
+        <div class="page-content"> 
+          <form id="keluhanp" class="keluhan" method="POST" action="">
+            <div class="block">
+              
+              <div class="list no-hairlines-md">
+                <div id="username"></div>
+                <div id="status_identitas"></div>
+                <div id="statusdilaporkan"></div>
+                <div id="lastidkeluhan"></div>
+                <ul>
+                  <h3>Tulis Curhatan Anda</h3>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Topik atau judul Curhatan</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="topik_pesan" id="topik_pesan" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Pesan Curhat</div>
+                      <div class="item-input-wrap">
+                        <textarea name="isi_pesan" id="isi_pesan" required validate></textarea>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                
+                <br>
+
+                <ul>
+                  <li>
+                    <label class="item-checkbox item-content">
+                      <input type="checkbox" id="cekpelapor" name="cekpelapor" value="" />
+                      <i class="icon icon-checkbox"></i>
+                      <div class="item-inner">
+                        <div class="item-title">Saya ingin melaporkan orang lain</div>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+
+                <div id="datadilaporkan">
+                  <h3>Data yang Dilaporkan</h3>
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Nama Lengkap</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="namalengkap" id="namalengkap" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+
+                   <li class="item-content item-input">
+                    <div class="item-inner">
+                      <!-- "item-floating-label" class on item title -->
+                      <div class="item-title item-floating-label">Umur</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="umur" id="umur" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Jenis Kelamin</div>
+                      <div class="item-input-wrap">
+                        <select name="jenis_kelamin" id="jenis_kelamin">
+                          <option value="">--------------------Pilih-------------------------------------------</option>
+                          <option value="pria" id="pria">Pria</option>
+                          <option value="wanita" id="wanita">Wanita</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-floating-label">Alamat</div>
+                      <div class="item-input-wrap">
+                        <textarea placeholder="Alamat Pelapor" name="alamat" id="alamat" required validate></textarea>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Kecamatan</div>
+                      <div class="item-input-wrap">
+                        <select id="pickerkecamatan" name="pickerkecamatan" placeholder="Mohon Pilih..." class="pkecamatan">
+                          <option value=" ">--------------------Pilih-------------------------------------------</option>
+                        </select>
+                      </div>
+                     </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Kelurahan</div>
+                      <div class="item-input-wrap">
+                        <select id="pickerkelurahan" name="pickerkelurahan" placeholder="Mohon Pilih..." class="pickerkelurahan">
+                          <option value=" ">--------------------Pilih-------------------------------------------</option>
+                        </select>
+                      </div>
+                     </div>
+                  </li>
+
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Status yang Dilaporkan </div>
+                      <div class="item-input-wrap">
+                        <select id="pickerstatus" name="pickerstatus" placeholder="Mohon Pilih..." class="spickerstatus">
+                          <option value="">--------------------Pilih-------------------------------------------</option>
+                           <option id="korban" value="korban">Korban</option>
+                          <option id="saksi" value="saksi">Saksi</option>
+                          <option id="pelaku" value="pelaku">Pelaku</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                 
+                </ul>
+                </div>
+
+                <ul id="cekidentitas">
+                  
+                </ul>
+
+              </div>
+             
+              <p class="row">                
+                <input type="button" name="btnkrmkeluhan" id="btnkrmkeluhan" value="Kirim" class="col button button-fill color-green">
+                <a href="/keluhan/" class="col button button-raised button-fill color-red" id="btnbtlkeluhan">Batal</a>
+              </p>
+            </div>      
+          </form>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>

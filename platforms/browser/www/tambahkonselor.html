@@ -1,0 +1,112 @@
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed toolbar-fixed">
+      <div class="page" data-name="beranda"> 
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left"><a href="/berandabackend/" class="link icon-only"><i class="icon f7-icons">chevron_left</i></a></div>
+              <div class="right"><a href="#" class="link icon-only"><i class="icon f7-icons">bell</i></a></div>             
+            </div>
+        </div>
+        
+        <div class="page-content"> 
+          <form id="tambah-konselor" class="tambahkonselor" method="POST" action="">
+            <div class="block">
+              <h3>Tambahkan Konselor</h3>
+              <div class="list">
+                <input type="hidden" name="status" id="status" value="pegawai">
+                <div id="lastid"></div>
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Nama Pengguna</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="username" id="username" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Kata Sandi</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="password" id="password" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Nama Lengkap Pegawai</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="namalengkap" id="namalengkap" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Jenis Kelamin</div>
+                      <div class="item-input-wrap">
+                        <select placeholder="Mohon Pilih..." required validate id="jeniskelamin" name="jeniskelamin">
+                          <option value="pria">pria</option>
+                          <option value="wanita">wanita</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Tanggal Lahir</div>
+                      <div class="item-input-wrap">
+                        <input type="date" placeholder="Mohon Pilih..." id="tanggallahir" name="tanggallahir">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Pendidikan Terakhir</div>
+                      <div class="item-input-wrap">
+                        <select placeholder="Mohon Pilih..." required validate id="pendidikanterakhir" name="pendidikanterakhir">
+                          <option value="SMA">SMA</option>
+                          <option value="D3">Ahli Madya (D3)</option>
+                          <option value="D4">Sarjana (D4)</option>
+                          <option value="S1">Sarjana (S1) </option>
+                          <option value="S2">Magister (S2)</option>
+                          <option value="S3">Doktor (S3)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Jabatan</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="jabatan" id="jabatan" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">No. Telp: </div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="notelp" id="notelp" required validate>
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <br>
+                </ul>
+              </div>
+              <p class="row">
+                <input type="button" name="btntambahpegawai" id="btntambahpegawai" value="Tambah Pegawai" class="col button button-fill color-green">
+                <input type="button" name="btnbatal" id="btnbatal" value="Batal" class="col button button-fill color-red">
+              </p>
+            </div>      
+          </form>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>

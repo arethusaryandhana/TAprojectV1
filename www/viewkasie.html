@@ -1,0 +1,145 @@
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed toolbar-fixed">
+      <div class="page" data-name="viewkasie"> 
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left"><a href="/daftarlaporan/" class="link icon-only"><i class="icon f7-icons">chevron_left</i></a></div>
+              <div class="title" id="judul"></div>
+              <div class="right">
+                <a href="/notifikasi/" class="link icon-only"><i class="icon f7-icons">bell</i></a>
+              </div>
+            </div>
+        </div>
+
+         <div class="toolbar tabbar toolbar-bottom-md">
+          <div class="toolbar-inner">
+            <a href="/berandabackend/" class="tab-link">
+              <!-- Different icons for iOS and MD themes -->
+              <i class="icon f7-icons">home</i>
+              <!-- Label text -->
+              <span class="tabbar-label">Beranda</span>
+            </a>
+            <a href="/daftarkeluhanadmin/" class="tab-link">
+              <i class="icon f7-icons">chat<span class="badge color-red">5</span></i>
+              <span class="tabbar-label">Chatting</span>
+            </a>
+            <a href="/profil/" class="tab-link tab-link-active">
+              <i class="icon f7-icons">person_fill</i>
+              <span class="tabbar-label">Profil</span>
+            </a>
+          </div>
+        </div>
+
+
+        <div class="page-content">
+          <form id="view-keluhan" method="POST">
+            <div class="list media-list">
+              <div class="block">
+                <div id="keluhan"></div>
+                <div class="card card-outline">
+                  <div id="datakeluhan">
+                    <div class="card card-outline">
+                      <input type='hidden' id='idkeluhan' name='idkeluhan' value='"+ id +"'>
+                        <div class='card-header'> <b>Depresi</b></div>
+                        <div class='card-content card-content-padding'>
+                          <p class='date'>2019-07-03</p>
+                          <p>Tetangga Saya mengalami depresi yang teramat sangat dalam. dia baru saja kehilangan ayahnya 3 bulan menjelang kelulusan SMA. Sebaiknya beliau perlu penanganan lanjutan.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-outline">
+                  <div id="dataklien">
+                 
+                  </div>
+                </div>
+
+                <div class="card card-outline">
+                  <div id="datatambahanklien">
+                    <div class='card-header'> <b> DATA TAMBAHAN KLIEN </b></div>
+                    <div class='card-content card-content-padding'>
+                      <p> Nama Ayah: indira s</p>
+                      <p> Nama Ibu: indira s</p>
+                      <p> Pekerjaan Ayah: guru</p>
+                      <p> Pekerjaan Ibu: guru</p>
+                      <p> Nama Saudara: 2019-04-17</p>
+                      <p> Situasi Keluarga klien: 2 bersaudara, tinggal bersama ortu, anak kedua</p>
+                      <p> Detil Tempat Tinggal Klien: berada di perumahan delta sari, milik keluarga</p>
+                      <p> Detil Pekerjaan Klien: seorang mahasiswi </p>
+                      <p> Detil Sekolah: universitas putra jaya </p>
+                      <p> Kepemilikan BPJS: tidak </p>
+                      <p> Kronologis Permasalahan: merasa tekanan dengan berat karena selalu dipaksa untuk berprestasi </p>
+                      <p> Harapan Klien: semoga dapat menjadi pribadi yang lebih baik</p>
+                      <p> Kategori Kasus: kekerasan </p>
+                      <p> Jenis Kasus: kdrt</p>
+                      <p> Jenis KDRT: berhubungan dengan psikis</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card card-outline">
+                  <div id="datatambahanklien">
+                    <div class='card-header'> <b> Keterangan dari Pimpinan Sebelumnya</b></div>
+                    <div class='card-content card-content-padding'>
+                      <p> Keterangan dari pimpinan: Perlu Pendampingan Konselor</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card card-outline">
+                  <div id="datakonselor">
+                 
+                  </div>
+                </div>
+                <div id="adm">
+                  
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Pesan akan ditangani oleh: </div>
+                      <div class="item-input-wrap">
+                        <select id="selectpickerpenanggap" name="selectpickerpenanggap" placeholder="Mohon Pilih..." class="penanggappesan">
+                          <option value="">--------------------Pilih-------------------------------------------</option>
+                           <option id="konselor" value="konselor">Konselor</option>
+                           <option id="kepala" value="kepala">Kepala Seksi</option>
+                          <option id="kepala" value="kepala">Kepala Bidang</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Staff yang menangani pengaduan: </div>
+                      <div class="item-input-wrap">
+                        <select id="selectpickerpenanggap" name="selectpickerpenanggap" placeholder="Mohon Pilih..." class="penanggappesan">
+                          <option value="">--------------------Pilih-------------------------------------------</option>
+                           <option id="arethusa" value="konselor">Arethusa Aryandhana</option>
+                           <option id="andre" value="kepala">Andre irhamni</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+
+              <div class="card">
+                <div id="kons">
+                  
+                </div>
+              </div>
+              <div class="block">
+                <p class="row">                
+                  <input type="button" name="btnsetuju" id="btnsetuju" value="Setuju" class="col button button-fill color-green">
+                  <a href="/daftarlaporan/" class="col button button-raised button-fill color-red" id="btnbtlkkrmkonselor">Batal</a>
+                </p>
+              </div>
+            </div>
+          </form> 
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
