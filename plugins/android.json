@@ -10,6 +10,9 @@
     "cordova-plugin-battery-status": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
+    "cordova-plugin-call-number": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
