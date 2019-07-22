@@ -52,8 +52,7 @@
     <content src="index.html" />
     <allow-navigation href="http://*/*" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+    <allow-intent href="http://e-curhat.000webhostapp.com/" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />

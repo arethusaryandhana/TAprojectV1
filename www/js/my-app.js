@@ -216,7 +216,7 @@ var app = new Framework7({
 					 			// localStorage.clear();
 								 //  var storedData = app.dialog.formDeleteData('beranda-konselor');
 								  // app.dialog.alert('Form data deleted')
-							});
+							});							
 						}
 						if(username == 'kabid'){
 							var usernm = "<input type='hidden' name='user_name' id='user_name' value='"+ username +"'>";
@@ -269,6 +269,7 @@ var app = new Framework7({
 								  // app.dialog.alert('Form data deleted')
 							});
 						}
+						$$("#chatting").hide();	
 					}
 					else if (kategori == 'konselor'){
 						var usernm = "<input type='hidden' name='user_name' id='user_name' value='"+ username +"'>";
@@ -835,6 +836,9 @@ var app = new Framework7({
 							var namapegawai = obj[i]['nama_pegawai'];
 							// console.log(namaklien);
 							if (status == 'klien') {
+								$$("#home").on('click', function(){
+									page.router.navigate("/beranda/");
+								})
 								var chatting = 
 								"<li> "+
             						"<a href='/chat/"+ idroom +"'class='item-link item-content'>" +
@@ -850,6 +854,10 @@ var app = new Framework7({
 							}
 
 							if (status == 'konselor'){
+								// $$("#beranda").html('<a href="/berandabackend/" class="tab-link" id="home">');
+								$$("#home").on('click', function(){
+									page.router.navigate("/berandabackend/");
+								})
 								var chatting = 
 								"<li> "+
             						"<a href='/chat/"+ idroom +"' class='item-link item-content'>" +
@@ -861,7 +869,7 @@ var app = new Framework7({
             						"</a>"
           						"</li>";
           						$$("#msg").append(chatting);
-							}
+							}							
 						}
 					});
 				},
@@ -929,9 +937,9 @@ var app = new Framework7({
 										    $$("#namakontak").html(namapegawai);
 								   		}
 									});
-									setTimeout(function () {
-								    	page.router.refreshPage();
-								  	}, 6000);
+									// setTimeout(function () {
+								 //    	page.router.refreshPage();
+								 //  	}, 6000);
 							}
 
 							if (status == 'konselor'){
@@ -982,9 +990,9 @@ var app = new Framework7({
 										   // $$("#sendchat").append(msgsndr);
 								   		}
 									});
-									setTimeout(function () {
-								    	page.router.refreshPage();
-								  	}, 6000);
+									// setTimeout(function () {
+								 //    	page.router.refreshPage();
+								 //  	}, 6000);
 							}
 						}
 					});
@@ -995,9 +1003,9 @@ var app = new Framework7({
 				       	// app.dialog.alert(teks);	
 				       						
 						app.request.post(server + '/ecurhat/sendchat.php',{username, status,teks,id}, function(data){
-							 setTimeout(function () {
+							 
 						    	page.router.refreshPage();
-						  	}, 3000);
+						  	
 							// // console.log(data);
 							// // if(data == 'berhasil'){
 							// 	// app.dialog.alert(teks);
@@ -1013,6 +1021,32 @@ var app = new Framework7({
 							// // }
 						});
 					});
+					$$("#call").on('click', function(){
+						$$(document).on('deviceready', function() {
+							function onSuccess(result){
+							  console.log("Success:"+result);
+							}
+							 
+							function onError(result) {
+							  console.log("Error:"+result);
+							}
+							window.plugins.CallNumber.callNumber(onSuccess, onError, "082245280715");
+						 //  console.log('cordova.plugins.CordovaCall is now available');
+						 //  // var cordovaCall = cordova.plugins.CordovaCall;
+						 //  cordova.plugins.CordovaCall.sendCall('Thusa');
+ 
+							// //simulate your friend answering the call 5 seconds after you call
+							// setTimeout(function(){
+							//   cordova.plugins.CordovaCall.connectCall();
+							// }, 5000);   
+						});
+					})
+					$$("#videocall").on('click', function(){
+						$$(document).on('deviceready', function() {
+							window.open = cordova.InAppBrowser.open;
+							var ref = cordova.InAppBrowser.open('https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1563387088&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3D80dee5c8-0eb5-4316-9839-b94424852536%26site_name%3Dlw.skype.com&lc=1033&id=293290&mkt=id-ID&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67', '_blank', 'location=yes');
+						});
+					})
 				},
 			}
 		},

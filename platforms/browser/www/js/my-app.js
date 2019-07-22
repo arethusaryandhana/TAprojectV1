@@ -1,5 +1,5 @@
 var $$ = Dom7;
-var server = 'http://e-curhat.000webhostapp.com/';
+var server = 'http://e-curhat.000webhostapp.com';
 
 
 var app = new Framework7({
@@ -204,9 +204,9 @@ var app = new Framework7({
 			                "<br>" + 
 			                "<a href='/daftarkonfirmasichat/' class='col button button-big button-fill' id='btnlist'>Daftar Konfirmasi Chat</a>" +
 			                "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
+			                "<a href='/listvalmasuk/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
 			                "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
+			                "<a href='/listvalakhir/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
 			                "<br>";
 			            	$$('#tambah').html(ad);
 
@@ -216,16 +216,15 @@ var app = new Framework7({
 					 			// localStorage.clear();
 								 //  var storedData = app.dialog.formDeleteData('beranda-konselor');
 								  // app.dialog.alert('Form data deleted')
-							});
+							});							
 						}
 						if(username == 'kabid'){
 							var usernm = "<input type='hidden' name='user_name' id='user_name' value='"+ username +"'>";
 							$$('#username').html(usernm);
 
-							var ad = "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
+							var ad = "<a href='/listvalmasuk/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
 			                "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
+			                "<a href='/listvalakhir/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
 			                "<br>";
 			            	$$('#tambah').html(ad);
 			            	$$('.delete-storage-data').on('click', function() {
@@ -240,10 +239,9 @@ var app = new Framework7({
 							var usernm = "<input type='hidden' name='user_name' id='user_name' value='"+ username +"'>";
 							$$('#username').html(usernm);
 
-							var ad = "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
+							var ad = "<a href='/listvalmasuk/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
 			                "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
+			                "<a href='/listvalakhir/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
 			                "<br>";
 			            	$$('#tambah').html(ad);
 			            	$$('.delete-storage-data').on('click', function() {
@@ -258,10 +256,9 @@ var app = new Framework7({
 							var usernm = "<input type='hidden' name='user_name' id='user_name' value='"+ username +"'>";
 							$$('#username').html(usernm);
 
-							var ad = "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
+							var ad = "<a href='/listvalmasuk/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Masuk</a>" +
 			                "<br>" + 
-			                "<a href='/daftarlaporan/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
+			                "<a href='/listvalakhir/' class='col button button-big button-fill' id='btnlist'>Daftar Validasi Laporan Akhir</a>" +
 			                "<br>";
 			            	$$('#tambah').html(ad);
 			            	$$('.delete-storage-data').on('click', function() {
@@ -272,6 +269,7 @@ var app = new Framework7({
 								  // app.dialog.alert('Form data deleted')
 							});
 						}
+						$$("#chatting").hide();	
 					}
 					else if (kategori == 'konselor'){
 						var usernm = "<input type='hidden' name='user_name' id='user_name' value='"+ username +"'>";
@@ -838,6 +836,9 @@ var app = new Framework7({
 							var namapegawai = obj[i]['nama_pegawai'];
 							// console.log(namaklien);
 							if (status == 'klien') {
+								$$("#home").on('click', function(){
+									page.router.navigate("/beranda/");
+								})
 								var chatting = 
 								"<li> "+
             						"<a href='/chat/"+ idroom +"'class='item-link item-content'>" +
@@ -853,6 +854,10 @@ var app = new Framework7({
 							}
 
 							if (status == 'konselor'){
+								// $$("#beranda").html('<a href="/berandabackend/" class="tab-link" id="home">');
+								$$("#home").on('click', function(){
+									page.router.navigate("/berandabackend/");
+								})
 								var chatting = 
 								"<li> "+
             						"<a href='/chat/"+ idroom +"' class='item-link item-content'>" +
@@ -864,7 +869,7 @@ var app = new Framework7({
             						"</a>"
           						"</li>";
           						$$("#msg").append(chatting);
-							}
+							}							
 						}
 					});
 				},
@@ -932,9 +937,9 @@ var app = new Framework7({
 										    $$("#namakontak").html(namapegawai);
 								   		}
 									});
-									setTimeout(function () {
-								    	page.router.refreshPage();
-								  	}, 6000);
+									// setTimeout(function () {
+								 //    	page.router.refreshPage();
+								 //  	}, 6000);
 							}
 
 							if (status == 'konselor'){
@@ -985,9 +990,9 @@ var app = new Framework7({
 										   // $$("#sendchat").append(msgsndr);
 								   		}
 									});
-									setTimeout(function () {
-								    	page.router.refreshPage();
-								  	}, 6000);
+									// setTimeout(function () {
+								 //    	page.router.refreshPage();
+								 //  	}, 6000);
 							}
 						}
 					});
@@ -998,9 +1003,9 @@ var app = new Framework7({
 				       	// app.dialog.alert(teks);	
 				       						
 						app.request.post(server + '/ecurhat/sendchat.php',{username, status,teks,id}, function(data){
-							 setTimeout(function () {
+							 
 						    	page.router.refreshPage();
-						  	}, 3000);
+						  	
 							// // console.log(data);
 							// // if(data == 'berhasil'){
 							// 	// app.dialog.alert(teks);
@@ -1016,6 +1021,32 @@ var app = new Framework7({
 							// // }
 						});
 					});
+					$$("#call").on('click', function(){
+						$$(document).on('deviceready', function() {
+							function onSuccess(result){
+							  console.log("Success:"+result);
+							}
+							 
+							function onError(result) {
+							  console.log("Error:"+result);
+							}
+							window.plugins.CallNumber.callNumber(onSuccess, onError, "082245280715");
+						 //  console.log('cordova.plugins.CordovaCall is now available');
+						 //  // var cordovaCall = cordova.plugins.CordovaCall;
+						 //  cordova.plugins.CordovaCall.sendCall('Thusa');
+ 
+							// //simulate your friend answering the call 5 seconds after you call
+							// setTimeout(function(){
+							//   cordova.plugins.CordovaCall.connectCall();
+							// }, 5000);   
+						});
+					})
+					$$("#videocall").on('click', function(){
+						$$(document).on('deviceready', function() {
+							window.open = cordova.InAppBrowser.open;
+							var ref = cordova.InAppBrowser.open('https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1563387088&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3D80dee5c8-0eb5-4316-9839-b94424852536%26site_name%3Dlw.skype.com&lc=1033&id=293290&mkt=id-ID&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67', '_blank', 'location=yes');
+						});
+					})
 				},
 			}
 		},
@@ -1318,20 +1349,52 @@ var app = new Framework7({
 			}
 		},
 		{
-			path: '/daftarlaporan/',
-			url: 'daftarlaporan.html',
+			path: '/listvalmasuk/',
+			url: 'listvallaporanmasuk.html',
 			on:{
 				pageInit: function(e, page){
+					app.panel.disableSwipe();
 					var us = localStorage.username;
-					var tipehal = 'daftarlaporanmasuk';
+					localStorage.valstatus = 'valmasuk';
+
+					if (us == 'walikota') {
+						$$('#listacc').hide();
+					}
+				}
+			}
+		},
+		{
+			path: '/listvalakhir/',
+			url: 'listvallaporanakhir.html',
+			on:{
+				pageInit: function(e, page){
+					app.panel.disableSwipe();
+					var us = localStorage.username;
+					localStorage.valstatus = 'valakhir';
+
+					if (us == 'walikota') {
+						$$('#listacc').hide();
+					}
+				}
+			}
+		},
+		{
+			path: '/listvalacc/',
+			url: 'listvallaporanacc.html',
+			on:{
+				pageInit: function(e, page){
+					app.panel.disableSwipe();
+					var us = localStorage.username;
+					var status = localStorage.valstatus;
+					console.log(status);
 
 					if(us == 'kasie' || us=='kabid' || us=='kadis' || us == 'walikota'){
-						app.request.post(server + '/ecurhat/showlistlaporanmasuk.php', {us, tipehal} , function(data){
+						app.request.post(server + '/ecurhat/showlistvalacc.php', {us,status} , function(data){
 							var obj = JSON.parse(data);
 							for (var i = 0; i < obj.length; i++) {
 								var str = 
 								"<li>" +
-				                  "<a href='/viewlaporanmasuk/"+ obj[i]['id_keluhan'] +"' class='item-link item-content'>" +
+				                  "<a href='/viewlaporanacc/"+ obj[i]['id_keluhan'] +"' class='item-link item-content'>" +
 				                    "<div class='item-inner'>" +
 				                      "<div class='item-title-row'>" +
 				                        "<div class='item-title'>"+ obj[i]['topik_pesan'] +"</div>" +
@@ -1349,13 +1412,44 @@ var app = new Framework7({
 			}
 		},
 		{
-			path: '/viewlaporanmasuk/:idkeluhan',
-			url: 'viewlaporanmasuk.html',
+			path: '/listvalblmacc/',
+			url: 'listvallaporanblmacc.html',
+			on:{
+				pageInit: function(e, page){
+					var us = localStorage.username;
+					var status = localStorage.valstatus;
+
+					if(us == 'kasie' || us=='kabid' || us=='kadis' || us == 'walikota'){
+						app.request.post(server + '/ecurhat/showlistvalblmacc.php', {us, status} , function(data){
+							var obj = JSON.parse(data);
+							for (var i = 0; i < obj.length; i++) {
+								var str = 
+								"<li>" +
+				                  "<a href='/viewlaporanblmacc/"+ obj[i]['id_keluhan'] +"' class='item-link item-content'>" +
+				                    "<div class='item-inner'>" +
+				                      "<div class='item-title-row'>" +
+				                        "<div class='item-title'>"+ obj[i]['topik_pesan'] +"</div>" +
+				                        "<div class='item-after'>"+ obj[i]['tanggal_diterima'] +"</div>" +
+				                      "</div>" +
+				                      "<div class='item-text'>" + obj[i]['isi_pesan'] + "</div>"
+				                    "</div>" +
+				                  "</a>" +
+				                "</li>";
+				                $$('#datakeluhan').append(str);
+							}
+						});
+					}
+				}
+			}
+		},
+		{
+			path: '/viewlaporanblmacc/:idkeluhan',
+			url: 'viewlaporanblmacc.html',
 			on:{
 				pageInit: function(e, page){
 					var id = page.router.currentRoute.params.idkeluhan;
 					var us = localStorage.username;
-					var tipehal = 'daftarlaporanmasuk';
+					var status = localStorage.valstatus;
 
 					app.request.post(server + "/ecurhat/viewkeluhan.php?id="+id, {}, function(data){						
 						var res = JSON.parse(data);
@@ -1391,10 +1485,108 @@ var app = new Framework7({
 							  "</div>";
 							
 							$$('#dataklien').append(dataklien);
+
+							var dataket = "<div class='card-header'> <b> Keterangan dari Pimpinan Sebelumnya</b></div>" + 
+						                    "<div class='card-content card-content-padding'>" + 
+						                      "<p>"+ res[i]['keterangan'] +"</p>" +
+						                   "</div>"; 
+						    $$('#dataketerangan').append(dataket);  
 						}
 					});
 
-					app.request.post(server + "/ecurhat/showdatadetilklien.php", {us,tipehal}, function(data){
+					app.request.post(server + "/ecurhat/showdatadetilklien.php", {us,status,id}, function(data){
+						var res = JSON.parse(data);
+						for (var i = 0; i < res.length; i++) {
+							var datadetail = 
+							  "<div class='card-header'> <b> DATA TAMBAHAN KLIEN </b></div>" +
+							  "<div class='card-content card-content-padding'>"+ 
+								  "<p> Nama Ayah: "+ res[i]['nama_ayah'] +"</p>" +
+								  "<p>Nama Ibu: "+ res[i]['nama_ibu'] +"</p>" +
+								  "<p> Pekerjaan Ayah: "+ res[i]['pekerjaan_ayah'] +"</p>" +
+								  "<p> Pekerjaan Ibu: "+ res[i]['pekerjaan_ibu'] +"</p>" +
+								  "<p> Nama Saudara: "+ res[i]['namasaudara'] +"</p>" +
+								  "<p> Situasi Keluarga klien: "+ res[i]['kondisi_keluarga'] +"</p>" +
+								  "<p> etil Tempat Tinggal Klien: "+ res[i]['detil_tempattinggal'] +"</p>" +
+								  "<p> Detil Pekerjaan Klien: "+ res[i]['detil_pekerjaan'] +" </p>"
+				                  "<p> Detil Sekolah: "+ res[i]['detil_sekolah'] +" </p>"
+				                  "<p> Kepemilikan BPJS: "+ res[i]['detil_bpjs'] +" </p>"
+				                  "<p> Kronologis Permasalahan: "+ res[i]['kronologis_permasalahan'] +" </p>"
+				                  "<p> Harapan Klien: "+ res[i]['harapan_klien'] +"</p>"
+				                  "<p> Jenis Kasus: "+ res[i]['jeniskasus'] +"</p>"
+							  "</div>";
+							
+							$$('#datadetail').append(datadetail);
+						}
+					});
+
+					if (us == 'kasie') {
+						$$('#dataketerangan').hide();
+					}
+
+					$$('#btnsetuju').on('click', function(){
+
+						var ket = $$('#keterangan').val();
+						app.request.post(server + "/ecurhat/updatevalblmacc.php", {us,status, ket, id}, function(data){
+							app.dialog.alert(data);
+						});
+					});
+
+				}
+			}
+		},
+		{
+			path: '/viewlaporanacc/:idkeluhan',
+			url: 'viewlaporanacc.html',
+			on:{
+				pageInit: function(e, page){
+					var id = page.router.currentRoute.params.idkeluhan;
+					var us = localStorage.username;
+					var status = localStorage.valstatus;
+
+					app.request.post(server + "/ecurhat/viewkeluhan.php?id="+id, {}, function(data){						
+						var res = JSON.parse(data);
+
+						for (var i = 0; i < res.length; i++) {
+							var datakel = 
+							"<div class='card-header'> <b>" + res[i]['topik_pesan'] + "</b></div>" +
+						  	"<div class='card-content card-content-padding'>"+ 
+							  "<p class='date'>"+ res[i]['tanggal_diterima'] +"</p>" +
+							  "<p>"+ res[i]['isi_pesan'] +"</p>" +
+						  	"</div>";
+
+							$$('#data_keluhan').append(datakel);
+
+							if( res[i]['identitas_klien'] == 'anonymous'){
+							var iden = 'Tanpa Nama';
+							}
+							else{
+								var iden = res[i]['nama_lengkap'];
+							}
+
+							var dataklien = 
+							"<input type='hidden' id='idklien' name='idklien' value='"+ res[i]['id_klien'] +"'>" +
+							  "<div class='card-header'> <b> DATA KLIEN </b></div>" +
+							  "<div class='card-content card-content-padding'>"+ 
+								  "<p> Nama lengkap: "+ iden +"</p>" +
+								  "<p> No. KTP: "+ res[i]['no_ktp'] +"</p>" +
+								  "<p> Jenis Kelamin: "+ res[i]['jenis_kelamin'] +"</p>" +
+								  "<p> Tanggal Lahir: "+ res[i]['tanggal_lahir'] +"</p>" +
+								  "<p> Alamat: "+ res[i]['alamat'] +"</p>" +
+								  "<p> No. Telp: "+ res[i]['no_telp'] +"</p>" +
+								  "<p> Email: "+ res[i]['email'] +"</p>" +
+							  "</div>";
+							
+							$$('#dataklien').append(dataklien);
+
+							var dataket = "<div class='card-header'> <b> Keterangan dari Pimpinan Sebelumnya</b></div>" + 
+						                    "<div class='card-content card-content-padding'>" + 
+						                      "<p>"+ res[i]['keterangan'] +"</p>" +
+						                   "</div>"; 
+						    $$('#dataketerangan').append(dataket);
+						}
+					});
+
+					app.request.post(server + "/ecurhat/showdatadetilklien.php", {us,status,id}, function(data){
 						var res = JSON.parse(data);
 						for (var i = 0; i < res.length; i++) {
 							var datadetail = 
@@ -1444,29 +1636,18 @@ var app = new Framework7({
 					}
 
 					$$('#btnsetuju').on('click', function(){
-						var ket = $$('#Keterangan').val();
-
-						if (username == 'kasie') {
-							var pegawai = $$('#selectpickerpegawai').val();
-							if (pegawai != '') {
-									app.dialog.confirm('Apakah anda yakin ingin mengirim keluhan ini kepada konselor?', function () {
-										
-										app.request.post(server + '/ecurhat/updatelaporanmasuk.php',
-											{pegawai,ket,id,tipehal}, function(data){
-											var res = data;
-											app.dialog.alert(res);
-										});
-										page.router.navigate('/daftarkeluhan/');;
-									});
-								}
-								else{
-									app.dialog.alert('Mohon lengkapi data sebelum dikirim ke konselor.');
-								}
+						var ket = $$('#keterangan').val();
+						var pegawai = $$('#selectpickerpegawai').val();
+						if (us == 'kasie') {
+							app.request.post(server + "/ecurhat/updateacckasie.php", {pegawai,status, ket, id}, function(data){
+								app.dialog.alert(data);
+							});
 						}
-
-						app.request.post(server + "/ecurhat/updatelaporanmasuk.php", {us,tipehal, ket, id}, function(data){
-							app.dialog.alert(data);
-						});
+						else{
+							app.request.post(server + "/ecurhat/updatevalacc.php", {us,status, ket, id}, function(data){
+								app.dialog.alert(data);
+							});
+						}
 
 					});
 
