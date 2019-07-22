@@ -1,5 +1,5 @@
 var $$ = Dom7;
-var server = 'http://e-curhat.epizy.com/';
+var server = 'http://e-curhat.000webhostapp.com/';
 
 
 var app = new Framework7({
