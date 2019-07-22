@@ -42,7 +42,11 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
     <name>E-curhat</name>
+    <icon density="mdpi" height="57" platform="ios" src="img/e-blue.png" width="57" />
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>

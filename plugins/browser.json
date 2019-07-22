@@ -42,6 +42,9 @@
     },
     "cordova-plugin-call-number": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
     }
   },
   "dependent_plugins": {

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>E-curhat</name>
-    <icon src="img/e-blue.png" platform="ios" width="57" height="57" density="mdpi" />
+    <icon density="mdpi" height="57" platform="android" src="www/img/e-blue.png" width="57" />
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
@@ -22,6 +22,7 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon density="mdpi" height="57" platform="android" src="www/img/e-blue.png" width="57" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
