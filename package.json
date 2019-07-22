@@ -25,7 +25,8 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-network-information": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-call-number": {}
+      "cordova-plugin-call-number": {},
+      "cordova-plugin-whitelist": {}
     },
     "platforms": [
       "android"
