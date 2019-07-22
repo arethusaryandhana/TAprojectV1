@@ -16,5 +16,6 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 </widget>
