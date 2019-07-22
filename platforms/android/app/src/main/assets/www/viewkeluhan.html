@@ -1,0 +1,233 @@
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed toolbar-fixed">
+      <div class="page" data-name="viewkeluhan"> 
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div id="listkeluhan"></div>
+              <div class="title" id="judul"></div>
+              <div class="right">
+                <a href="/notifikasi/" class="link icon-only"><i class="icon f7-icons">bell</i></a>
+              </div>
+            </div>
+        </div>
+
+         
+
+
+        <div class="page-content">
+          <form id="view-keluhan" method="POST">
+            <div class="list media-list">
+              <div class="block">
+                <div class="card card-outline">
+                  <div id="datakeluhan"></div>
+
+                </div>
+                <div class="card card-outline">
+                  <div id="dataklien">
+
+                  </div>
+                </div>
+
+                <div class="card card-outline">
+                  <div id="datakonselor">
+                 
+                  </div>
+                </div>
+                <div id="adm">
+                  
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Pesan akan ditangani oleh: </div>
+                      <div class="item-input-wrap">
+                        <select id="selectpickerpenanggap" name="selectpickerpenanggap" placeholder="Mohon Pilih..." class="penanggappesan">
+                          <option value="">--------------------Pilih-------------------------------------------</option>
+                           <option id="konselor" value="konselor">Konselor</option>
+                          <option id="kepala" value="kepalaseksi">Kepala Seksi</option>
+                        </select>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+
+              <div class="card">
+                <div id="kons">
+                  <div class="card-header">Tambahan Data Identitas Klien</div>
+                    <div class="card-content card-content-padding">
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">No. Kartu Keluarga</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="No. Kartu Keluarga" name="nokk" id="nokk" required validate>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Nama Ayah</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Nama Ayah" name="namaayah" id="namaayah" required validate>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Nama Ibu</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Nama Ibu" name="namaibu" id="namaibu" required validate>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Pekerjaan Ayah</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Pekerjaan Ayah" name="pkrjnayah" id="pkrjnayah" required validate>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Pekerjaan Ibu</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Pekerjaan Ibu" name="pkrjnibu" id="pkrjnibu" required validate>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Nama Saudara</div>
+                          <div class="item-input-wrap">
+                            <input type="text" placeholder="Nama Saudara" name="namasdr" id="namasdr" required validate>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Situasi Keluarga Klien</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="Tinggal dengan siapa?" id="Kondisikeluarga" name="Kondisikeluarga" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Detil Tempat Tinggal klien</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="Detil Rumah" id="detilrumah" name="detilrumah" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Detil Pekerjaan klien</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="Detil Pekerjaan" id="detilpekerjaan" name="detilpekerjaan" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Detil Sekolah</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="Detil Sekolah" id="detilsekolah" name="detilsekolah" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Kepemilikan BPJS</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="kepemilikan bpjs" id="kepemilikanbpjs" name="kepemilikanbpjs" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Kronologis Permasalahan</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="Kronologis Permasalahan" id="kronologisPermasalahan" name="kronologisPermasalahan" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-floating-label">Harapan Klien</div>
+                          <div class="item-input-wrap">
+                            <textarea placeholder="Harapan Klien" id="harapanklien" name="harapanklien" required validate></textarea>
+                            <span class="input-clear-button"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Kategori Kasus</div>
+                          <div class="item-input-wrap">
+                            <select placeholder="Mohon Pilih..." required validate id="kategorikasus" name="kategorikasus">
+                              <option value="kekerasan">Kekerasan</option>
+                              <option value="bukankekerasan">Bukan kekerasan</option>
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <div id="jnskasus">
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">Jenis Kasus</div>
+                            <div class="item-input-wrap">
+                              <select placeholder="Mohon Pilih..."  id="jeniskasus" name="jeniskasus">
+                                <option value="">--Piih Jenis Kasus--</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                      <div id="jnskdrt">
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">Jenis KDRT</div>
+                            <div class="item-input-wrap">
+                              <select placeholder="Mohon Pilih..."  id="jeniskdrt" name="jeniskdrt">
+                                <option value="">--Piih Jenis KDRT--</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                      </div>
+                      <li class="item-content item-input">
+                        <div class="item-inner">
+                          <div class="item-title item-label">Masukan Foto</div>
+                          <div class="item-input-wrap">
+                            <br>
+                            <input type="file" name="fotoklien">
+                          </div>
+                        </div>
+                      </li> 
+                    </div>
+                </div>
+              </div>
+              
+                <p class="row">                
+                  <input type="button" name="btnkrmkonselor" id="btnkrmkonselor" class="col button button-fill color-green">
+                  <a href="/viewkeluhan:keluhanid/" class="col button button-raised button-fill color-red" id="btnbtlkkrmkonselor">Batal</a>
+                </p>
+              
+            </div>
+          </form> 
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>

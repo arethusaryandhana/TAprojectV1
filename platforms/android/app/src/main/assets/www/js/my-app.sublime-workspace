@@ -1,0 +1,480 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"usern",
+				"username"
+			],
+			[
+				"loc",
+				"localStorage"
+			],
+			[
+				"page",
+				"pageInit"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"bera",
+				"beranda"
+			],
+			[
+				"na",
+				"namaklien"
+			],
+			[
+				"nama",
+				"namakons"
+			],
+			[
+				"idk",
+				"idkel"
+			],
+			[
+				"tan",
+				"tanggalakhir"
+			],
+			[
+				"tang",
+				"tanggalmulai"
+			],
+			[
+				"stat",
+				"statuskonsul"
+			],
+			[
+				"ta",
+				"tanggalmulai"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"loca",
+				"localhost"
+			],
+			[
+				"ht",
+				"http"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"view",
+				"viewkeluhan"
+			],
+			[
+				"id",
+				"idkeluhan"
+			],
+			[
+				"daf",
+				"daftarprogress"
+			],
+			[
+				"app",
+				"app"
+			],
+			[
+				"daftar",
+				"daftar-progress"
+			],
+			[
+				"da",
+				"daftarprogress"
+			],
+			[
+				"ob",
+				"objct"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"pega",
+				"pegawai_idpegawai"
+			],
+			[
+				"pegawai",
+				"pegawai_has_keluhan"
+			],
+			[
+				"peg",
+				"pegawai_idpegawai"
+			],
+			[
+				"pe",
+				"pegawai_idpegawai"
+			],
+			[
+				"tipe",
+				"tipehal"
+			],
+			[
+				"c",
+				"chatting"
+			],
+			[
+				"pegawa",
+				"pegawai_idpegawai"
+			],
+			[
+				"status",
+				"status_keluhan"
+			],
+			[
+				"kel",
+				"keluhan_id_keluhan"
+			],
+			[
+				"keluha",
+				"keluhan_id_keluhan"
+			],
+			[
+				"klien",
+				"klien_id_klien"
+			],
+			[
+				"pegaw",
+				"pegawai_idpegawai"
+			],
+			[
+				"PEGAWA",
+				"pegawai_has_keluhan"
+			],
+			[
+				"kat",
+				"kategori"
+			],
+			[
+				"u",
+				"username"
+			],
+			[
+				"ke",
+				"keluhan_id"
+			],
+			[
+				"pr",
+				"prioritas"
+			],
+			[
+				"s",
+				"sql"
+			],
+			[
+				"kelu",
+				"keluhan"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"keluah",
+				"keluhan_id"
+			],
+			[
+				"daft",
+				"daftarkonfirmasichat"
+			],
+			[
+				"butt",
+				"Buttontype"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"identi",
+				"identitas_klien"
+			],
+			[
+				"h",
+				"href"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/login.html",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/register.html",
+		"/C/xamppOLD/htdocs/ecurhat/registeruser.php",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/js/my-app.js",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/beranda.html",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/pesan.html",
+		"/C/xamppOLD/htdocs/ecurhat/pesan.php",
+		"/C/xamppOLD/htdocs/ecurhat/readchat.php",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/chat.html",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/historykeluhan.html",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/progresskeluhan.html",
+		"/C/xamppOLD/htdocs/ecurhat/insertprogress.php",
+		"/C/xamppOLD/htdocs/ecurhat/showlistkeluhan.php",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/daftarprogress.html",
+		"/C/xamppOLD/htdocs/ecurhat/sendchat.php",
+		"/C/xamppOLD/htdocs/ecurhat/chat.php",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/css/chat.css",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/index.html",
+		"/C/xamppOLD/htdocs/ecurhat/updatekeluhan.php",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/keluhan.html",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/daftarkeluhan.html",
+		"/C/xamppOLD/htdocs/ecurhat/insertkeluhan.php",
+		"/C/Users/Alief Praditya/indiraTA/TAprojectV4/TAproject/www/viewkeluhan.html",
+		"/G/TA/ecurhat/updatekeluhan.php",
+		"/G/TA/ecurhat/viewkeluhan.php",
+		"/C/xamppOLD/htdocs/ecurhat/insertkonselor.php",
+		"/F/####BAHAN ARETHUSA/ereminder/webservice/ws_load_kalender.php",
+		"/F/####BAHAN ARETHUSA/ereminder/webservice/ws_action_simpan_reminder_khusus.php",
+		"/F/####BAHAN ARETHUSA/ereminder/webservice/ws_kirim_email_tes.php",
+		"/F/####BAHAN ARETHUSA/ereminder/insert.php",
+		"/F/####BAHAN ARETHUSA/ereminder/reminder_khusus_page.php",
+		"/C/xamppOLD/htdocs/ecurhat/login.php",
+		"/C/xampp/htdocs/projek_peweb/index.php",
+		"/C/xampp/htdocs/projek_peweb/ceklogin.php",
+		"/D/ILPC 2017/Contoh Soal2 Tahun Lalu Disini/ILPC 2016/Programming Penyisihan + Source Code 2016/in out/alan3.in",
+		"/D/Kuliah/Desweb/style-Payment.css",
+		"/D/Kuliah/Desweb/style/week9.css",
+		"/D/Kuliah/Desweb/latihanweek9Position.html",
+		"/C/Users/Alief Praditya/Downloads/UTS/UTS/style/uts.css",
+		"/H/@Kuliah/Desweb/image.html",
+		"/C/Users/Alief Praditya/Downloads/Compressed/DESWEB/DESWEB/Style/Main.css",
+		"/D/Kuliah/Desweb Project UAS/style/style-RestaurantAccount.css",
+		"/D/Kuliah/Desweb Project UAS/MainPage.html",
+		"/H/@Kuliah/Desweb/Week final/website sederhana.html",
+		"/D/Desweb Kuis/style/main.css",
+		"/D/Desweb Kuis/style/main2.css",
+		"/H/@Kuliah/Desweb/Week final/style/style.css",
+		"/H/@Kuliah/Desweb/Week final/style/main.css",
+		"/H/@Kuliah/Desweb/style/main.css",
+		"/D/Web/style.css",
+		"/D/Web/9.foodReview.html",
+		"/D/Web/flowchart.html",
+		"/D/Web/tabletime.html",
+		"/D/Web/8.categories.html",
+		"/D/Web/1.index.html",
+		"/D/Web/2.tujuan.html",
+		"/D/Web/3.target.html",
+		"/D/Web/4.home.html",
+		"/D/Web/5.restaurantPage.html",
+		"/D/Web/6.searchPage.html",
+		"/D/Web/7.register.html",
+		"/D/Web/10.voucherMenu.html",
+		"/D/Web/11.itemReview.html",
+		"/D/Web/12.deliver.html",
+		"/D/Web/13.payment.html",
+		"/D/Web/14.restaurantAccount.html",
+		"/D/Web/15.createRestaurant.html",
+		"/D/Web/16.createMenu.html",
+		"/D/Web/17.createVoucher.html",
+		"/D/Web/test.html",
+		"/D/Web/slide5.html",
+		"/D/Web/10.Mockup_VoucherMenu.html",
+		"/D/Web/slide3.html",
+		"/D/Web/RestaurantPage.html",
+		"/D/Web/slide2.html",
+		"/D/Web/slide4.html",
+		"/D/Web/slide1.html",
+		"/D/Web/tujuan.html",
+		"/D/Web/target.html",
+		"/D/Web/index.html",
+		"/D/Web/css/style.css",
+		"/D/Kuliah/Desweb/image.html",
+		"/H/@Kuliah/Desweb/index2.html",
+		"/H/Web/css/style.css"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "my-app.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 380.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
