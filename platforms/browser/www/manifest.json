@@ -4,11 +4,11 @@
   "name": "E-curhat",
   "short_name": "E-curhat",
   "version": "com.phonegap.helloworld",
-  "description": "Hello World sample application that responds to the deviceready event.",
+  "description": "Created By: Indira Safira Bawondesz",
   "author": "PhoneGap Team",
   "icons": [
     {
-      "src": "img/e-blue.png",
+      "src": "www/img/e-blue.png",
       "type": "image/png",
       "sizes": "57x57"
     }
