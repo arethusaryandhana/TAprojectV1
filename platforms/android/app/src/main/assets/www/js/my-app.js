@@ -1745,6 +1745,19 @@ else if(!localStorage.kategori){
 	});
 }
 
+$$(document).on('deviceready', function() {
+	var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("ae0c3b87-ce80-465e-a424-80ebfc9448ab")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit(); 
+    window.plugins.OneSignal.setSubscription(true);
+    window.plugins.OneSignal.enableNotificationWhenActive(true);
+}, false);
+
 function readMessage(id, status, page){
   // var page = app.views.main.router.url;
   app.panel.disableSwipe();
