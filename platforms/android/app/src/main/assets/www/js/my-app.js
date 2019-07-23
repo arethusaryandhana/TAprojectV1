@@ -123,7 +123,7 @@ var app = new Framework7({
 								var result = JSON.parse(data);
 								for (var i = 0; i < result.length; i++) {
 									
-									if(result[i]['status_keluhan'] != 6){
+									if(result[i]['status_keluhan'] != 7){
 										app.dialog.alert("Maaf, belum bisa menulis keluhan");
 									}
 									else{
