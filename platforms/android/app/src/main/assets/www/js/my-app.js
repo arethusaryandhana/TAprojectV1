@@ -1075,7 +1075,7 @@ var app = new Framework7({
 									function onError(result) {
 									  console.log("Error:"+result);
 									}
-									window.plugins.CallNumber.callNumber(onSuccess, onError, objt[0]["no_telp"]);
+									window.plugins.CallNumber.callNumber(onSuccess, onError, objct[0]["no_telp"]);
 								 //  console.log('cordova.plugins.CordovaCall is now available');
 								 //  // var cordovaCall = cordova.plugins.CordovaCall;
 								 //  cordova.plugins.CordovaCall.sendCall('Thusa');
@@ -1098,7 +1098,7 @@ var app = new Framework7({
 									function onError(result) {
 									  console.log("Error:"+result);
 									}
-									window.plugins.CallNumber.callNumber(onSuccess, onError, objt[0]["notelp"]);
+									window.plugins.CallNumber.callNumber(onSuccess, onError, objct[0]["notelp"]);
 								 //  console.log('cordova.plugins.CordovaCall is now available');
 								 //  // var cordovaCall = cordova.plugins.CordovaCall;
 								 //  cordova.plugins.CordovaCall.sendCall('Thusa');
@@ -2101,6 +2101,19 @@ else if(!localStorage.kategori){
 		url: '/login/'
 	});
 }
+
+$$(document).on('deviceready', function() {
+	var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("ae0c3b87-ce80-465e-a424-80ebfc9448ab")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit(); 
+    window.plugins.OneSignal.setSubscription(true);
+    window.plugins.OneSignal.enableNotificationWhenActive(true);
+}, false);
 
 function readMessage(id, status, page){
   // var page = app.views.main.router.url;
