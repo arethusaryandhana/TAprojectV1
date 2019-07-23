@@ -1085,9 +1085,9 @@ var app = new Framework7({
 									//   cordova.plugins.CordovaCall.connectCall();
 									// }, 5000);   
 								});
-							}
+							});
 						}
-						else (status == 'klien'){
+						else if (status == 'klien'){
 							app.request.post(server + '/ecurhat/shownotelp.php',{status,iduser},function(data){
 								var objct = JSON.parse(data);
 								$$(document).on('deviceready', function() {
@@ -1108,7 +1108,7 @@ var app = new Framework7({
 									//   cordova.plugins.CordovaCall.connectCall();
 									// }, 5000);   
 								});
-							}
+							});
 						}
 
 

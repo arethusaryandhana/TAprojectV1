@@ -1,112 +1,196 @@
 <div data-name="register" class="page no-navbar no-toolbar no-swipeback">
     <div class="page-content login-screen-content">
       <div class="navbar">
-            <div class="navbar-inner">
-              <div class="left"><a href="/profil/" class="link icon-only"><i class="icon f7-icons">chevron_left</i></a></div>
-              <div class="title">Edit Profil</div>
-              
-            </div>
-        </div>
+          <div class="navbar-inner">
+            <div class="left"><a href="/profil/" class="link icon-only"><i class="icon f7-icons">chevron_left</i></a></div>
+            <div class="title">Edit Profil</div>
+            
+          </div>
+      </div>
 
-      <!-- Login form -->
-      <form>
+      <form class="editprofil" method="POST">
         <div class="list">
-          <ul>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <!-- "item-floating-label" class on item title -->
-                <div class="item-title item-floating-label">Nama Pengguna</div>
-                <div class="item-input-wrap">
-                  <input type="text" name="namalengkap">
-                  <span class="input-clear-button"></span>
+          <input type="hidden" name="status" id="status" value="klien">
+          <div id="lastid"></div>
+          <div id="data_user">
+            
+          </div>
+
+          <div class="block" id="btn">
+            <input type="button" name="btnedt" id="btnedt" value="Edit Data" class="col button button-fill color-green">
+          </div>
+
+          <div id="edit">
+            <ul>
+              <li class="item-content item-input" id="usern">
+                <div class="item-inner">
+                  <!-- "item-floating-label" class on item title -->
+                  <div class="item-title item-floating-label">Nama Pengguna</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="username" id="username" required validate>
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
+              </li>
+
+              <div id="adm">
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-floating-label">Kata Sandi</div>
+                    <div class="item-input-wrap">
+                      <input type="password" placeholder="Kata Sandi.." id="password" name="password" required validate >
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-floating-label">Konfirmasi Kata Sandi</div>
+                    <div class="item-input-wrap">
+                      <input type="password" placeholder="Kata Sandi.." id="confirmpassword" name="confirmpassword" required validate >
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
               </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-floating-label">Kata Sandi</div>
-                <div class="item-input-wrap">
-                  <input type="password" placeholder="Kata Sandi..">
-                  <span class="input-clear-button"></span>
+
+              <li class="item-content item-input" id="namal">
+                <div class="item-inner">
+                  <!-- "item-floating-label" class on item title -->
+                  <div class="item-title item-floating-label">Nama Lengkap</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="namalengkap" id="namalengkap" required validate>
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <!-- "item-floating-label" class on item title -->
-                <div class="item-title item-floating-label">Nama Lengkap</div>
-                <div class="item-input-wrap">
-                  <input type="text" name="namapengguna">
-                  <span class="input-clear-button"></span>
+              </li>
+              <li class="item-content item-input" id="ktpno">
+                <div class="item-inner">
+                  <!-- "item-floating-label" class on item title -->
+                  <div class="item-title item-floating-label">No. KTP</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="noktp" id="noktp" required validate pattern="[0-9]*" data-error-message="Harap mengisi dengan angka!">
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <!-- "item-floating-label" class on item title -->
-                <div class="item-title item-floating-label">No. KTP</div>
-                <div class="item-input-wrap">
-                  <input type="text" name="noktp">
-                  <span class="input-clear-button"></span>
+              </li>
+              <li class="item-content item-input" id="jk">
+                <div class="item-inner">
+                  <div class="item-title item-label">Jenis Kelamin</div>
+                  <div class="item-input-wrap">
+                    <select placeholder="Mohon Pilih..." required validate id="jeniskelamin" name="jeniskelamin">
+                      <option value=" ">--------------------Pilih-------------------------------------------</option>
+                      <option value="pria">pria</option>
+                      <option value="wanita">wanita</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-label">Jenis Kelamin</div>
-                <div class="item-input-wrap">
-                  <select placeholder="Mohon Pilih...">
-                    
-                    <option value="pria">pria</option>
-                    <option value="wanita">wanita</option>
-                  </select>
+              </li>
+              <li class="item-content item-input" id="job">
+                <div class="item-inner">
+                  <!-- "item-floating-label" class on item title -->
+                  <div class="item-title item-floating-label">Pekerjaan</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="pekerjaan" id="pekerjaan" required validate>
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-label">Tanggal Lahir</div>
-                <div class="item-input-wrap">
-                  <input type="date" value="0000-00-00" placeholder="Mohon Pilih...">
+              </li>
+              <li class="item-content item-input" id="tgllahir">
+                <div class="item-inner">
+                  <div class="item-title item-label">Tanggal Lahir</div>
+                  <div class="item-input-wrap">
+                    <input type="date" placeholder="Mohon Pilih..." id="tanggallahir" name="tanggallahir">
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <div class="item-title item-label">Alamat</div>
-                <div class="item-input-wrap">
-                  <textarea placeholder="Alamat"></textarea>
+              </li>
+              <li class="item-content item-input" id="address">
+                <div class="item-inner">
+                  <div class="item-title item-floating-label">Alamat</div>
+                  <div class="item-input-wrap">
+                    <textarea placeholder="Alamat" id="alamat" name="alamat" required validate></textarea>
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
+              </li>
+              <li class="item-content item-input" id="kec">
+                <div class="item-inner">
+                  <div class="item-title item-label">Kecamatan</div>
+                  <div class="item-input-wrap">
+                    <select id="pickerkecamatan" name="pickerkecamatan" placeholder="Mohon Pilih..." class="pkecamatan" required validate>
+                      <option value=" ">--------------------Pilih-------------------------------------------</option>
+                    </select>
+                  </div>
+                 </div>
+              </li>
+              <li class="item-content item-input" id="kel">
+                <div class="item-inner">
+                  <div class="item-title item-label">Kelurahan</div>
+                  <div class="item-input-wrap">
+                    <select id="pickerkelurahan" name="pickerkelurahan" placeholder="Mohon Pilih..." class="pickerkelurahan" required validate>
+                      <option value=" ">--------------------Pilih-------------------------------------------</option>
+                    </select>
+                  </div>
+                 </div>
+              </li>
+
+              <div id="kons">
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Pendidikan Terakhir</div>
+                    <div class="item-input-wrap">
+                      <select placeholder="Mohon Pilih..." required validate id="pendidikanterakhir" name="pendidikanterakhir">
+                        <option value="SMA">SMA</option>
+                        <option value="D3">Ahli Madya (D3)</option>
+                        <option value="D4">Sarjana (D4)</option>
+                        <option value="S1">Sarjana (S1) </option>
+                        <option value="S2">Magister (S2)</option>
+                        <option value="S3">Doktor (S3)</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Jabatan</div>
+                    <div class="item-input-wrap">
+                      <input type="text" name="jabatan" id="jabatan" required validate>
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
               </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <!-- "item-floating-label" class on item title -->
-                <div class="item-title item-floating-label">No. Telpon</div>
-                <div class="item-input-wrap">
-                  <input type="text" name="notelp">
-                  <span class="input-clear-button"></span>
+
+              <li class="item-content item-input" id="number">
+                <div class="item-inner">
+                  <!-- "item-floating-label" class on item title -->
+                  <div class="item-title item-floating-label">No. Telpon</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="notelp" id="notelp" required validate pattern="[0-9]*" data-error-message="Harap mengisi dengan angka!">
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="item-content item-input">
-              <div class="item-inner">
-                <!-- "item-floating-label" class on item title -->
-                <div class="item-title item-floating-label">E-Mail</div>
-                <div class="item-input-wrap">
-                  <input type="text" name="email">
-                  <span class="input-clear-button"></span>
+              </li>
+              <li class="item-content item-input" id="em">
+                <div class="item-inner">
+                  <!-- "item-floating-label" class on item title -->
+                  <div class="item-title item-floating-label">E-Mail</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="email" id="email" required validate >
+                    <span class="input-clear-button"></span>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="block">
-        <p class="row">
-            <input type="button" id="btnBatal" name="btnBatal" class="col button button-fill" value="Simpan">
-            <input type="button" id="btnBatal" name="btnBatal" class="col button button-fill color-green" value="Batal">
-        </p>              
+              </li>
+            </ul>
+          </div>
           
+        </div>
+        <div class="block" id="btnhide">
+          <p class="row">
+            <input type="button" name="btnedit" value="Simpan Data" id="btnedit" class="col button button-raised button-fill color-green">
+            <a href="/profil/" class="col button button-raised button-fill color-red" id="btnbataledit">Batal</a>
+          </p>
+          <br>
         </div>
       </form>
     </div>
