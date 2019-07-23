@@ -68,6 +68,23 @@ var app = new Framework7({
 							
 						});
 
+						app.request.post(server + '/ecurhat/notif.php',
+							{username:username, password:password}, function(data){
+								$$(document).on('deviceready', function() {
+									var notificationOpenedCallback = function(jsonData) {
+								    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+								  };
+
+								  window.plugins.OneSignal
+								    .startInit("ae0c3b87-ce80-465e-a424-80ebfc9448ab")
+								    .handleNotificationOpened(notificationOpenedCallback)
+								    .endInit(); 
+								    window.plugins.OneSignal.setSubscription(true);
+								    window.plugins.OneSignal.enableNotificationWhenActive(true);
+								}, false);
+							
+						});
+
 						app.panel.disableSwipe();
 					});
 				},
