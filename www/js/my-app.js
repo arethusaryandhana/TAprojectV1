@@ -188,6 +188,7 @@ var app = new Framework7({
 								var x = new FormData($$('.register')[0]);
 								app.request.post(server + '/ecurhat/registeruser.php', x, function(data){
 				               		app.dialog.alert("Akun anda berhasil terdaftar");
+				               		page.router.refreshPage();
 				               		page.router.navigate('/login/');
 				              	});
 							}
