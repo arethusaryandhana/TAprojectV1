@@ -1,5 +1,5 @@
 var $$ = Dom7;
-var server = 'http://e-curhat.000webhostapp.com';
+var server = 'http://localhost:81';
 
 
 var app = new Framework7({
@@ -1243,9 +1243,9 @@ var app = new Framework7({
 
 					// app.dialog.alert(id);
 					$$('#btnkrmprogress').on('click', function(){
-						var isikonsul = $$('isi_konsultasi').val();
-						var kondisiklien = $$('kondisiklien').val();
-						var tempatkonsul = $$('isi_konsultasi').val();
+						var isikonsul = $$('#isi_konsultasi').val();
+						var kondisiklien = $$('#kondisiklien').val();
+						var tempatkonsul = $$('#tempatkonsul').val();
 
 
 						if (isikonsul != ''  && kondisiklien != '' && tempatkonsul != '' ) {
@@ -2083,6 +2083,284 @@ var app = new Framework7({
 				}
 			}
 		},
+		{
+			path: '/daftarpesan/',
+			url: 'daftarpesan.html',
+			on:{
+				pageInit: function(e, page){
+					app.panel.disableSwipe();
+				}
+			}
+		},
+		{
+			path: '/pesanassesment/',
+			url: 'pesanassesment.html',
+			on:{
+				pageInit: function(e, page){
+					app.panel.disableSwipe();
+					username = localStorage.username;
+					status = localStorage.kategori;
+					tipehal = 'pesanassesment';
+					localStorage.tipehal = tipehal;
+
+					app.request.post(server + '/ecurhat/pesanassesment.php',{username, status, tipehal}, function(data){
+						var obj = JSON.parse(data);
+						// console.log(data);
+						for (var i = 0; i < obj.length; i++) {
+							var idroom = obj[i]['id_keluhan'];
+							var idpegawai = obj[i]['idpegawai'];
+							var idklien = obj[i]['klien_id_klien'];
+							var namaklien = obj[i]['nama_lengkap'];
+							var namapegawai = obj[i]['nama_pegawai'];
+							// console.log(namaklien);
+							if (status == 'klien') {
+								$$("#home").on('click', function(){
+									page.router.navigate("/beranda/");
+								});
+								var chatting = 
+								"<li> "+
+            						"<a href='/chatassesment/"+ idroom +"'class='item-link item-content'>" +
+              							"<div class='item-inner'>" +
+                							"<div class='item-title-row'" +
+                  								"<div class='item-title'>Pesan dari "+ namapegawai +"</div>" +
+               								"</div>" +
+              							"</div>" +
+            						"</a>"
+          						"</li>";
+
+          						$$("#msg").append(chatting);
+							}
+
+							if (status == 'konselor'){
+								// $$("#beranda").html('<a href="/berandabackend/" class="tab-link" id="home">');
+								$$("#home").on('click', function(){
+									page.router.navigate("/berandabackend/");
+								});
+								var chatting = 
+								"<li> "+
+            						"<a href='/chatassesment/"+ idroom +"' class='item-link item-content'>" +
+              							"<div class='item-inner'>" +
+                							"<div class='item-title-row'" +
+                  								"<div class='item-title'>"+ namaklien +"</div>" +
+               								"</div>" +
+              							"</div>" +
+            						"</a>"
+          						"</li>";
+          						$$("#msg").append(chatting);
+							}							
+						}
+					});
+				},
+			}
+		},
+		{
+			path: '/chatassesment/:idroom',
+			url: 'chatassesment.html',
+			on:{
+				pageInit: function(e, page){
+					app.panel.disableSwipe();
+					var id = page.router.currentRoute.params.idroom;
+					username = localStorage.username;
+					status = localStorage.kategori;
+					tipehal = 'chat';
+					localStorage.tipehal = tipehal;
+					var iduser;
+					// $$("#sendchat").hide();
+
+					app.request.post(server + '/ecurhat/pesanchat.php',{username, status, tipehal, id}, function(data){
+						// console.log(data[0]['pegawai_idpegawai']);
+						// console.log(data);
+						var obj = JSON.parse(data);
+						// page.router.refreshPage();
+						for (var i = 0; i < obj.length; i++) {
+							// var idroom = obj[i]['id_keluhan'];
+							var idroom = id;
+							var idpegawai = obj[i]['pegawai_idpegawai'];
+							var idklien = obj[i]['klien_id_klien'];
+							var namaklien = obj[i]['nama_lengkap'];
+							var namapegawai = obj[i]['nama_pegawai'];
+
+							if (status == 'klien') {
+								iduser = idpegawai;
+									app.request.post(server + '/ecurhat/readchatassesment.php',{status,idpegawai,idroom,idklien},function(data){
+										var objct = JSON.parse(data);
+										// console.log(data);
+										// var sndmsg;
+										for (var i = 0; i < objct.length; i++) {
+											if(objct[i]['keterangan'] == status){
+												var sndmsg = 
+													'<div class="message message-sent">' +
+												      '<div class="message-content">' +
+											        	'<div class="message-name">Blue Ninja</div>' +
+											          		'<div class="message-bubble">' +
+											            		'<div class="message-text">'+ objct[i]['isi_chat']+' </div>' +
+											          		'</div>' +
+											        	'</div>' +
+											        '</div>';
+										        	$$("#chats").append(sndmsg);
+											}
+											else{
+												var sndmsg = 
+												'<div class="message message-received">' +
+											        '<div class="message-content">' +
+											          '<div class="message-name">Blue Ninja</div>' +
+											          '<div class="message-bubble">' +
+											            '<div class="message-text"> '+ objct[i]['isi_chat'] +' </div>' +
+											          '</div>'
+											        '</div>'
+											      '</div>';
+											      $$("#chats").append(sndmsg);
+											}
+											
+
+										    $$("#namakontak").html(namapegawai);
+								   		}
+									});
+									// setTimeout(function () {
+								 //    	page.router.refreshPage();
+								 //  	}, 6000);
+							}
+
+							if (status == 'konselor'){
+								iduser = idklien;
+								app.request.post(server + '/ecurhat/readchatassesment.php',{status,idpegawai,idroom,idklien},function(data){
+									var objct = JSON.parse(data);
+									// console.log(idpegawai);
+									for (var i = 0; i < objct.length; i++) {
+										// console.log(objct[i]['keterangan']);
+										// console.log(data);
+										if(objct[i]['keterangan'] == status){
+											var sndmsg = 
+												'<div class="message message-sent">' +
+											      '<div class="message-content">' +
+										        	'<div class="message-name">Blue Ninja</div>' +
+										          		'<div class="message-bubble">' +
+										            		'<div class="message-text">'+ objct[i]['isi_chat']+' </div>' +
+										          		'</div>' +
+										        	'</div>' +
+										        '</div>';
+									        	$$("#chats").append(sndmsg);
+										}
+										else{
+											var sndmsg1 = 
+											'<div class="message message-received">' +
+										        '<div class="message-content">' +
+										          '<div class="message-name">Blue Ninja</div>' +
+										          '<div class="message-bubble">' +
+										            '<div class="message-text"> '+ objct[i]['isi_chat'] +' </div>' +
+										          '</div>'
+										        '</div>'
+										      '</div>';
+										      $$("#chats").append(sndmsg1);
+										}
+										// console.log(obj);
+									    $$("#namakontak").html(namaklien);
+								   		// $$("#receivedchat").append(sndmsg);
+
+								   	// 	var msgsndr =
+								    //     	'<div class="message-content">' +
+								    //     	'<div class="message-name">Blue Ninja</div>' +
+								    //       		'<div class="message-bubble">' +
+								    //         		'<div class="message-text">'+ objct[i]['chatsender'] +' </div>' +
+								    //       		'</div>' +
+								    //     	'</div>';
+
+									   // $$("#sendchat").append(msgsndr);
+							   		}
+								});
+								// setTimeout(function () {
+							 //    	page.router.refreshPage();
+							 //  	}, 6000);
+							}
+						}
+					});
+					
+
+					$$("#btnkrmpesan").on('click', function(){
+						var teks = $$("#msgtxt").val();
+				       	// app.dialog.alert(teks);	
+				       						
+						app.request.post(server + '/ecurhat/sendchatassesment.php',{username, status,teks,id}, function(data){
+							 
+						    	page.router.refreshPage();
+						  	
+							// // console.log(data);
+							// // if(data == 'berhasil'){
+							// 	// app.dialog.alert(teks);
+							// 	var sndmsg =
+						 //        	'<div class="message-content">' +
+						 //        	'<div class="message-name">Blue Ninja</div>' +
+						 //          		'<div class="message-bubble">' +
+						 //            		'<div class="message-text">'+ teks+' </div>' +
+						 //          		'</div>' +
+						 //        	'</div>';
+
+							//    $$("#sendchat").append(sndmsg);
+							// // }
+						});
+					});
+
+					$$("#call").on('click', function(){
+						if (status == 'konselor') {
+							app.request.post(server + '/ecurhat/shownotelp.php',{status,iduser},function(data){
+								var objct = JSON.parse(data);
+								$$(document).on('deviceready', function() {
+									function onSuccess(result){
+									  console.log("Success:"+result);
+									}
+									 
+									function onError(result) {
+									  console.log("Error:"+result);
+									}
+									window.plugins.CallNumber.callNumber(onSuccess, onError, objct[0]["no_telp"]);
+								 //  console.log('cordova.plugins.CordovaCall is now available');
+								 //  // var cordovaCall = cordova.plugins.CordovaCall;
+								 //  cordova.plugins.CordovaCall.sendCall('Thusa');
+		 
+									// //simulate your friend answering the call 5 seconds after you call
+									// setTimeout(function(){
+									//   cordova.plugins.CordovaCall.connectCall();
+									// }, 5000);   
+								});
+							});
+						}
+						else if (status == 'klien'){
+							app.request.post(server + '/ecurhat/shownotelp.php',{status,iduser},function(data){
+								var objct = JSON.parse(data);
+								$$(document).on('deviceready', function() {
+									function onSuccess(result){
+									  console.log("Success:"+result);
+									}
+									 
+									function onError(result) {
+									  console.log("Error:"+result);
+									}
+									window.plugins.CallNumber.callNumber(onSuccess, onError, objct[0]["notelp"]);
+								 //  console.log('cordova.plugins.CordovaCall is now available');
+								 //  // var cordovaCall = cordova.plugins.CordovaCall;
+								 //  cordova.plugins.CordovaCall.sendCall('Thusa');
+		 
+									// //simulate your friend answering the call 5 seconds after you call
+									// setTimeout(function(){
+									//   cordova.plugins.CordovaCall.connectCall();
+									// }, 5000);   
+								});
+							});
+						}
+
+
+						
+					})
+					$$("#videocall").on('click', function(){
+						$$(document).on('deviceready', function() {
+							window.open = cordova.InAppBrowser.open;
+							var ref = cordova.InAppBrowser.open('https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1563387088&rver=7.1.6819.0&wp=MBI_SSL&wreply=https%3A%2F%2Flw.skype.com%2Flogin%2Foauth%2Fproxy%3Fclient_id%3D572381%26redirect_uri%3Dhttps%253A%252F%252Fweb.skype.com%252FAuth%252FPostHandler%26state%3D80dee5c8-0eb5-4316-9839-b94424852536%26site_name%3Dlw.skype.com&lc=1033&id=293290&mkt=id-ID&psi=skype&lw=1&cobrandid=2befc4b5-19e3-46e8-8347-77317a16a5a5&client_flight=ReservedFlight33%2CReservedFlight67', '_blank', 'location=yes');
+						});
+					})
+				},
+			}
+		},
+
 	]
 });
 if(localStorage.kategori == 'klien'){
