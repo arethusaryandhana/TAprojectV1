@@ -1,5 +1,5 @@
 var $$ = Dom7;
-var server = 'http://localhost:81';
+var server = 'https://e-curhat.000webhostapp.com/';
 
 
 var app = new Framework7({
