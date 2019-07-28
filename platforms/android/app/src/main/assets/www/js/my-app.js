@@ -91,6 +91,9 @@ var app = new Framework7({
 
 						app.panel.disableSwipe();
 					});
+					$$("#btnregister").on('click', function(){
+						page.router.refreshPage();
+					});
 				},
 			}
 		},
